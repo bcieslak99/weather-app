@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+      <div class="card p-2 shadow shadow-sm">
+        <div class="card-body">
+          <h2 class="card-title text-center">Sprawdź pogodę w swojej miejscowości</h2>
+          <form [formGroup]="cityForm">
+            <div class="text-center">
+              <mat-form-field>
+                <mat-label>Nazwa miejscowości</mat-label>
+                <input matInput formControlName="cityName">
+                <mat-error *ngIf="controls.cityName.invalid">{{getErrorMessage(controls.cityName)}}</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="text-center mt-4 mt-md-2">
+              <button type="submit" (click)="emitCityName()" [disabled]="disabledSearchButton()" mat-raised-button color="primary">Sprawdź pogodę</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
