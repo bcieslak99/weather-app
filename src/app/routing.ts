@@ -5,8 +5,8 @@ import {ForecastWeatherComponent} from "./modules/view/forecast-weather/forecast
 
 const routes: Routes = [
   {path: "", redirectTo: "/current-weather", pathMatch: "full"},
-  {path: "current-weather", component: CurrentWeatherComponent, pathMatch: "full"},
-  {path: "forecast-weather", component: ForecastWeatherComponent, pathMatch: "full"},
+  {path: "current-weather", component: CurrentWeatherComponent, pathMatch: "full", title: "WeatherApp :: Aktualna Pogoda"},
+  {path: "forecast-weather", component: ForecastWeatherComponent, pathMatch: "full", title: "WeatherApp :: Prognozowana Pogoda"},
   {path: "**", redirectTo: "/current-weather"}
 ]
 

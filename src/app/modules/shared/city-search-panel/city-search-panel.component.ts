@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
@@ -6,13 +6,14 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
   templateUrl: './city-search-panel.component.html',
   styleUrls: ['./city-search-panel.component.css']
 })
-export class CitySearchPanelComponent
+export class CitySearchPanelComponent implements OnInit
 {
   private readonly minimumLengthOfCityName: number = 2;
   private readonly maximumLengthOfCityName: number = 200;
 
   cityName: string = "";
   @Output() cityNameEmitter = new EventEmitter<string>;
+  @Input() startCityName: string | null = null;
 
   cityForm = new FormGroup({
     cityName: new FormControl('', [Validators.required, Validators.minLength(this.minimumLengthOfCityName),
@@ -48,5 +49,10 @@ export class CitySearchPanelComponent
     else if(control.hasError("maxLength"))
       return "Wprowadzono zbyt dużą liczbę znaków!";
     else return ""
+  }
+
+  ngOnInit(): void
+  {
+    this.controls.cityName.setValue(this.startCityName);
   }
 }

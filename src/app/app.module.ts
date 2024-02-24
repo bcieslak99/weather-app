@@ -7,6 +7,12 @@ import {MaterialModule} from "./modules/material/material.module";
 import {SharedModule} from "./modules/shared/shared.module";
 import {RoutingModule} from "./routing";
 import {CurrentWeatherModule} from "./modules/view/current-weather/current-weather.module";
+import {NotifierModule, NotifierOptions} from "angular-notifier";
+import {ForecastWeatherModule} from "./modules/view/forecast-weather/forecast-weather.module";
+
+const notifierConfig: NotifierOptions = {
+  theme: "material"
+}
 
 @NgModule({
   declarations: [
@@ -18,7 +24,9 @@ import {CurrentWeatherModule} from "./modules/view/current-weather/current-weath
     MaterialModule,
     SharedModule,
     RoutingModule,
-    CurrentWeatherModule
+    CurrentWeatherModule,
+    ForecastWeatherModule,
+    NotifierModule.withConfig(notifierConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

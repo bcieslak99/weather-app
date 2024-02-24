@@ -1,0 +1,4 @@
+<app-city-search-panel [startCityName]="startCityName" (cityNameEmitter)="checkWeatherInCity($event.trim())"></app-city-search-panel>
+<div *ngIf="weatherToShow !== null && weatherToShow !== undefined" class="mt-5">
+  <app-current-weather-information-panel [currentWeather]="weatherToShow"></app-current-weather-information-panel>
+</div>
