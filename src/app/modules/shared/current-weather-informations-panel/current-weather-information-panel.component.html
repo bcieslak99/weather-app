@@ -1,8 +1,8 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="currentWeather !== null">
   <div class="row justify-content-center">
     <div class="col-12 text-center">
-      <h1 style="font-size: 40px; font-weight: bold">{{currentWeather?.cityName}}</h1>
-      <h3 style="font-size: 30px;font-weight: bold"><img src="{{'https://openweathermap.org/img/wn/' + currentWeather?.weather?.icon + '.png'}}"> {{currentWeather?.main?.temp + ' °C'}}</h3>
+      <h1 style="font-size: 40px; font-weight: bold">{{currentWeather.cityName}}</h1>
+      <h3 style="font-size: 30px;font-weight: bold"><img src="{{'https://openweathermap.org/img/wn/' + currentWeather.weather.icon + '.png'}}"> {{currentWeather.main.temp + ' °C'}}</h3>
     </div>
   </div>
   <div class="row justify-content-center">
@@ -10,11 +10,11 @@
       <div class="card">
         <div class="card-header text-center">Informacje o lokalizacji</div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">{{'Szerokość geograficzna: ' + currentWeather?.lat}}</li>
-          <li class="list-group-item">{{'Długość geograficzna: ' + currentWeather?.lon}}</li>
-          <li class="list-group-item">{{'Kraj: ' + currentWeather?.country}}</li>
-          <li class="list-group-item">{{'Data danych pogodowych: ' + (currentWeather?.dt | date: 'dd.MM.yyyy HH:mm:ss')}}</li>
-          <li class="list-group-item">{{'Dane pobrano: ' + (currentWeather?.lastDataUpdate | date: 'dd.MM.yyyy HH:mm:ss')}}</li>
+          <li class="list-group-item">{{'Szerokość geograficzna: ' + currentWeather.lat}}</li>
+          <li class="list-group-item">{{'Długość geograficzna: ' + currentWeather.lon}}</li>
+          <li class="list-group-item">{{'Kraj: ' + currentWeather.country}}</li>
+          <li class="list-group-item">{{'Data danych pogodowych: ' + (currentWeather.dt | date: 'dd.MM.yyyy HH:mm:ss')}}</li>
+          <li class="list-group-item">{{'Dane pobrano: ' + (currentWeather.lastDataUpdate | date: 'dd.MM.yyyy HH:mm:ss')}}</li>
         </ul>
       </div>
     </div>
@@ -23,13 +23,13 @@
       <div class="card">
         <div class="card-header text-center">Informacje o pogodzie</div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">{{'Stan pogody: ' + currentWeather?.weather?.description}}</li>
-          <li class="list-group-item">{{'Temperatura: ' + currentWeather?.main?.temp + ' °C'}}</li>
-          <li class="list-group-item">{{'Temperatura odczuwalna: ' + currentWeather?.main?.feels_like + ' °C'}}</li>
-          <li class="list-group-item">{{'Ciśnienie: ' + currentWeather?.main?.pressure + ' hPa'}}</li>
-          <li class="list-group-item">{{'Prędkość wiatru: ' + currentWeather?.wind?.speed + ' km/h'}}</li>
-          <li class="list-group-item">{{'Wschód słońca o ' + (currentWeather?.sys?.sunrise | date: 'HH:mm:ss')}}</li>
-          <li class="list-group-item">{{'Zachód słońca o ' + (currentWeather?.sys?.sunset | date: 'HH:mm:ss')}}</li>
+          <li class="list-group-item">{{'Stan pogody: ' + currentWeather.weather.description}}</li>
+          <li class="list-group-item">{{'Temperatura: ' + currentWeather.main.temp + ' °C'}}</li>
+          <li class="list-group-item">{{'Temperatura odczuwalna: ' + currentWeather.main.feels_like + ' °C'}}</li>
+          <li class="list-group-item">{{'Ciśnienie: ' + currentWeather.main.pressure + ' hPa'}}</li>
+          <li class="list-group-item">{{'Prędkość wiatru: ' + currentWeather.wind.speed + ' km/h'}}</li>
+          <li class="list-group-item">{{'Wschód słońca o ' + (currentWeather.sys.sunrise | date: 'HH:mm:ss')}}</li>
+          <li class="list-group-item">{{'Zachód słońca o ' + (currentWeather.sys.sunset | date: 'HH:mm:ss')}}</li>
         </ul>
       </div>
     </div>
