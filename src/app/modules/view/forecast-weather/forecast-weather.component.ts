@@ -47,7 +47,7 @@ export class ForecastWeatherComponent implements OnInit
             pressure: element.main.pressure
           },
           wind: {
-            speed: element.wind.speed
+            speed: Math.round(element.wind.speed * 100 * 3.6) / 100
           }
         });
       });
