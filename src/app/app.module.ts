@@ -24,8 +24,6 @@ const notifierConfig: NotifierOptions = {
     MaterialModule,
     SharedModule,
     RoutingModule,
-    CurrentWeatherModule,
-    ForecastWeatherModule,
     NotifierModule.withConfig(notifierConfig)
   ],
   providers: [],
