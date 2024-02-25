@@ -25,10 +25,11 @@ import { ForecastWeatherInformationPanelComponent } from './forecast-weather-inf
     HttpClientModule,
     NgOptimizedImage
   ],
-  exports: [
-    NavbarComponent,
-    CitySearchPanelComponent,
-    CurrentWeatherInformationPanelComponent
-  ]
+    exports: [
+        NavbarComponent,
+        CitySearchPanelComponent,
+        CurrentWeatherInformationPanelComponent,
+        ForecastWeatherInformationPanelComponent
+    ]
 })
 export class SharedModule {}
